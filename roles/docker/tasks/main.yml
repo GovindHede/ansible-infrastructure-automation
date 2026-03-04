@@ -1,0 +1,32 @@
+---
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+- name: Start and enable Docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Add ubuntu user to docker group
+  user:
+    name: ubuntu
+    groups: docker
+    append: yes
+
+- name: Install Docker Python module
+  apt:
+    name: python3-docker
+    state: present
+
+- name: Run Nginx container
+  docker_container:
+    name: mynginx
+    image: nginx
+    state: started
+    restart_policy: always
+    ports:
+      - "8080:80"
