@@ -1,7 +1,7 @@
 
 # 🚀 Infrastructure Automation Using Ansible on AWS EC2
 
-![Architecture Diagram](Infrastructure Automation Using Ansible.png)
+![Architecture Diagram](infrastructure-automation-using-ansible.png)
 
 ---
 
